@@ -12,14 +12,19 @@
         <div id="back-img"></div>
 
         <div id="login">
-            <form>
-                <h2>LOGIN</h2>
+            <form class="login-form" autocomplete="off">
                 <label for="email">email</label>
-                <input type="text" id="email">
+                <input type="email" id="email" name="email" placeholder="email@example.com" required />
+
                 <label for="password">password</label>
-                <input type="text" id="password">
-                <button>sign in</button>
-            </form>
+                <input type="password" id="password" name="password" placeholder="password" required />
+
+                <div class="form-footer">
+                    <a href="#" class="forgot-link">¿forgot your password?</a>
+                    <button type="submit" class="button-primary">sign in now!</button>
+                </div>
+                <p id="errorMessage"></p>
+                </form>
         </div>
     </main>
 
