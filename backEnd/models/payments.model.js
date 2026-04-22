@@ -6,6 +6,6 @@ export const getAll = async () => {
 };
 
 export const create = async (data) => {
-    const {id, account_receivable_id, payment_date, amount_paid, payment_method, reference, created_at} = data;
-    await db.query("INSERT INTO payments (id, account_receivable_id, payment_date, amount_paid, payment_method, reference, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)", [id, account_receivable_id, payment_date, amount_paid, payment_method, reference, created_at])
+    const {id, account_receivable_id, recorded_by_user_id, payment_date, amount_paid, payment_method, reference, created_at} = data;
+    await db.query("INSERT INTO payments (id, account_receivable_id, recorded_by_user_id, payment_date, amount_paid, payment_method, reference, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [id, account_receivable_id, recorded_by_user_id, payment_date, amount_paid, payment_method, reference, created_at])
 };

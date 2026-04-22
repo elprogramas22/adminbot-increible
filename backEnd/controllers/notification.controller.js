@@ -1,4 +1,4 @@
-import {getAll, create} from "../models/notifications.model.js"
+import {getAll, create} from "../models/whatsapp_notifications.model.js"
 import {randomUUID} from "crypto"
 
 export const getNotifications = async (req, res) => {

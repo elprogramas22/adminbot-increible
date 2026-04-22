@@ -1,4 +1,4 @@
-import {getAll, create} from "../models/attendances.model.js"
+import {getAll, create} from "../models/attendance.model.js"
 import {randomUUID} from "crypto"
 
 export const getAttendances = async (req, res) => {
