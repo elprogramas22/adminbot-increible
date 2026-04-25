@@ -1,6 +1,6 @@
 import bcrypt from "bcrypt"
-
 import { findUserByEmail } from "../models/auth.model.js"
+import { generateToken } from "../config/auth.middleware.js"
 
 export const login = async (req,res)=>{
     try{
@@ -21,21 +21,22 @@ export const login = async (req,res)=>{
             })
         }
 
-        const validPass = bcrypt.compare(password, user.password_hash)
+        const validPass = await bcrypt.compare(password, user.password_hash)
         if(!validPass){
             return res.status(401).json({
-                message: "password incorrect"
+                message: "Invalid credentials"
             })
         }
 
         return res.status(200).json({
             ok: true,
-            message: "succes!",
+            message: "Login successful!",
             user:{
                 id: user.id,
                 name: user.first_name,
                 email: user.email
-            }
+            },
+            token: generateToken(user)
         })
 
     }catch(err){

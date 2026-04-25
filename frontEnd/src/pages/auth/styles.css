@@ -1,3 +1,4 @@
+/* Login - Estilo Académico */
 *,
 *::before,
 *::after {
@@ -6,173 +7,228 @@
     padding: 0;
 }
 
-:root {
-    --primary: #667eea;
-    --secondary: #764ba2;
-    --bg-light: #f8f9fa;
-    --text-dark: #333;
-    --text-medium: #555;
-    --border-color: #e1e5e9;
-    --btn-dark: #1e1e2f;
-    --btn-dark-2: #2c2c54;
-}
-
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    height: 100vh;
+    font-family: 'Times New Roman', serif;
+    background-color: #f9f9f9;
+    color: #333;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    overflow: hidden;
+    padding: 20px;
 }
 
-main {
-    position: relative;
+.login-container {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
     width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 0;
 }
 
-#back-img {
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(135deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3)),
-        url('../../assets/images/estudiantes.jpg') no-repeat center center;
-    background-size: cover;
-    z-index: -1;
-}
-
-#login {
-    position: relative;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 40px;
-    border-radius: 20px;
-    width: 100%;
-    max-width: 400px;
+/* Header Académico */
+.login-header {
+    background-color: #003366;
+    color: white;
+    padding: 30px 40px;
     text-align: center;
-
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-
-    animation: fadeIn 0.6s ease;
+    border-bottom: 2px solid #001f3f;
 }
 
-#login::before {
-    content: '📚';
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 3em;
-    opacity: 0.7;
+.academic-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
 }
 
-form {
+.logo-icon {
+    font-size: 48px;
+    opacity: 0.9;
+}
+
+.academic-logo h1 {
+    font-size: 24px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 14px;
+    opacity: 0.9;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Formulario */
+.login-form-container {
+    padding: 40px;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-header h2 {
+    font-size: 22px;
+    color: #003366;
+    margin: 0 0 15px 0;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+}
+
+.header-decoration {
+    height: 2px;
+    background-color: #003366;
+    width: 60px;
+    margin: 0 auto;
+}
+
+.login-form {
     display: flex;
     flex-direction: column;
 }
 
-form h2 {
-    margin-bottom: 30px;
-    color: var(--text-dark);
-    font-size: 2.5em;
-    font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    position: relative;
-}
-
-form h2::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
-    border-radius: 2px;
-}
-
-label {
-    text-align: left;
-    margin-bottom: 5px;
-    color: var(--text-medium);
-    font-weight: 500;
-    font-size: 0.9em;
-}
-
-input {
-    padding: 15px;
+.form-group {
     margin-bottom: 20px;
-    border: 2px solid var(--border-color);
-    border-radius: 10px;
-    font-size: 1em;
-    transition: all 0.3s ease;
-    background: var(--bg-light);
 }
 
-input::placeholder {
-    color: #aaa;
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-input:hover {
-    border-color: var(--primary);
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    font-size: 14px;
+    font-family: 'Times New Roman', serif;
+    transition: border-color 0.2s ease;
+    background-color: white;
 }
 
-input:focus {
+.form-group input:focus {
     outline: none;
-    border-color: var(--primary);
-    background: #fff;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: #003366;
+    box-shadow: inset 0 0 0 1px #003366;
 }
 
-input:focus,
-button:focus {
-    outline: 2px solid var(--primary);
-    outline-offset: 2px;
+.form-group input::placeholder {
+    color: #999;
+    font-style: italic;
 }
 
-button {
-    padding: 15px;
-    background: linear-gradient(135deg, var(--btn-dark), var(--btn-dark-2));
-    color: #f1f1f1;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.1em;
+/* Botones */
+.btn-primary {
+    padding: 14px 20px;
+    background-color: #003366;
+    color: white;
+    border: 1px solid #003366;
+    border-radius: 0;
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
-
+    font-family: 'Times New Roman', serif;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 10px;
-
-    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    width: 100%;
 }
 
-button:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+.btn-primary:hover {
+    background-color: #001f3f;
+    border-color: #001f3f;
 }
 
-button:active {
-    transform: translateY(0);
+.btn-primary:disabled {
+    background-color: #666;
+    border-color: #666;
+    cursor: not-allowed;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+/* Footer del formulario */
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.forgot-link {
+    color: #003366;
+    text-decoration: none;
+    font-size: 13px;
+    font-style: italic;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+/* Mensajes de error */
+.error-message {
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #fff8f8;
+    color: #cc3333;
+    border: 1px solid #cc3333;
+    border-left: 4px solid #cc3333;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* Footer académico */
+.academic-footer {
+    background-color: #f9f9f9;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+.footer-decoration {
+    height: 1px;
+    background-color: #003366;
+    width: 40px;
+    margin: 0 auto 10px auto;
+}
+
+.academic-footer p {
+    font-size: 12px;
+    color: #666;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .login-container {
+        margin: 20px;
+        max-width: none;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+    .login-header {
+        padding: 25px 30px;
+    }
+
+    .academic-logo h1 {
+        font-size: 20px;
+    }
+
+    .login-form-container {
+        padding: 30px 25px;
+    }
+
+    .form-header h2 {
+        font-size: 20px;
     }
 }
 
@@ -181,12 +237,23 @@ button:active {
         padding: 10px;
     }
 
-    #login {
-        padding: 30px 20px;
-        max-width: 100%;
+    .login-container {
+        margin: 10px;
     }
 
-    form h2 {
-        font-size: 2em;
+    .login-header {
+        padding: 20px;
+    }
+
+    .academic-logo h1 {
+        font-size: 18px;
+    }
+
+    .logo-icon {
+        font-size: 36px;
+    }
+
+    .login-form-container {
+        padding: 25px 20px;
     }
 }

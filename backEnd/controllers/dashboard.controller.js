@@ -2,7 +2,7 @@ import {getDashboardData} from "../models/dashboard.model.js"
 
 export const getDashboard = async (req, res) =>{
     try{
-        const data = await getDashboard()
+        const data = await getDashboardData()
         return res.status(200).json({
             ok: true,
             dashboard: data

@@ -1,5 +1,6 @@
 import express from "express"
 import bcrypt from "bcrypt"
+import cors from "cors"
 
 import studentRoutes from "./routes/students.route.js" 
 import guardianRoutes from "./routes/guardians.route.js"
@@ -9,9 +10,11 @@ import whatsappNotificationsRoutes from "./routes/whatsapp_notifications.route.j
 import authRoutes from "./routes/auth.route.js"
 import dashboardRoute from "./routes/dashboard.route.js"
 import attendanceRoutes from "./routes/attendance.route.js"
+import { authenticateToken } from "./config/auth.middleware.js"
 
 
 const app = express()
+app.use(cors())
 app.use(express.json())
 const PORT = 3000
 
@@ -27,6 +30,26 @@ app.use("/api", attendanceRoutes)
 app.get("/", (req, res)=>{
     res.send("api en funcionamiento")
 })
+
+// Middleware para rutas API no encontradas (debe ir al final)
+app.use((req, res, next) => {
+    if (req.path.startsWith('/api')) {
+        return res.status(404).json({
+            ok: false,
+            message: "Endpoint not found"
+        })
+    }
+    next()
+})
+
+// Middleware para rutas privadas (debe ir después de las rutas)
+app.use("/api/students", authenticateToken)
+app.use("/api/guardians", authenticateToken)
+app.use("/api/payments", authenticateToken)
+app.use("/api/users", authenticateToken)
+app.use("/api/whatsapp", authenticateToken)
+app.use("/api/dashboard", authenticateToken)
+app.use("/api/attendance", authenticateToken)
 /*
 const passwordList = [
     "andres123",

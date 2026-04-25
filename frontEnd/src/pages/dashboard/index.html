@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Académico</title>
+    <link rel="stylesheet" href="../../shared/css/global.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <h2>AdminBot</h2>
+        </div>
+        <ul class="navbar-menu">
+            <li><a href="/dashboard" onclick="navigateTo('/dashboard')">Dashboard</a></li>
+            <li><a href="/students" onclick="navigateTo('/students')">Estudiantes</a></li>
+            <li><a href="/users" onclick="navigateTo('/users')">Usuarios</a></li>
+            <li><a href="/payments" onclick="navigateTo('/payments')">Pagos</a></li>
+            <li><a href="/attendance" onclick="navigateTo('/attendance')">Asistencia</a></li>
+            <li><a href="/settings" onclick="navigateTo('/settings')">Configuración</a></li>
+            <li><button id="logout-btn">Cerrar Sesión</button></li>
+        </ul>
+    </nav>
+
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>Dashboard Académico</h1>
+            <p>Gestión de Pagos y Asistencia</p>
+        </header>
+
+        <div class="stats-section">
+            <div class="stat-card">
+                <h3>Total Estudiantes</h3>
+                <p id="totalStudents">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Pagos Pendientes</h3>
+                <p id="pendingPayments">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Ausencias Hoy</h3>
+                <p id="absencesToday">0</p>
+            </div>
+        </div>
+
+        <div class="students-section">
+            <div class="students-card">
+                <h2>Estudiantes que Pagaron</h2>
+                <ul id="paidStudentsList"></ul>
+            </div>
+            <div class="students-card">
+                <h2>Estudiantes Pendientes</h2>
+                <ul id="pendingStudentsList"></ul>
+            </div>
+            <div class="students-card">
+                <h2>Estudiantes en Mora</h2>
+                <ul id="overdueStudentsList"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="dashboard.js"></script>
+</body>
+</html>

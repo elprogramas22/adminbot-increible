@@ -1,0 +1,174 @@
+/* Navbar styles */
+.navbar {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand h2 {
+    margin: 0;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu li {
+    margin-left: 20px;
+}
+
+.navbar-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+.navbar-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+#logout-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#logout-btn:hover {
+    background-color: #c82333;
+}
+
+/* Dashboard CSS - Estilo Académico */
+
+.dashboard-container {
+    font-family: 'Times New Roman', serif;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #003366;
+    padding-bottom: 10px;
+}
+
+.dashboard-header h1 {
+    color: #003366;
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.dashboard-header p {
+    font-style: italic;
+    color: #666;
+    margin: 5px 0 0 0;
+}
+
+.stats-section {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+}
+
+.stat-card h3 {
+    color: #003366;
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+}
+
+.stat-card p {
+    font-size: 2em;
+    color: #333;
+    margin: 0;
+    font-weight: bold;
+}
+
+.students-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.students-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1;
+    min-width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.students-card h2 {
+    color: #003366;
+    border-bottom: 1px solid #003366;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.students-card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.students-card li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+}
+
+.students-card li:last-child {
+    border-bottom: none;
+}
+
+.students-card .student-name {
+    font-weight: bold;
+}
+
+.students-card .student-amount {
+    color: #666;
+}
+
+.students-card .student-due {
+    font-size: 0.9em;
+    color: #999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stats-section {
+        flex-direction: column;
+    }
+
+    .students-section {
+        flex-direction: column;
+    }
+}
