@@ -1,15 +1,20 @@
-import { getUser } from "./storage.js"
+import { getUser, getToken } from "./storage.js"
 const API_URL = "http://localhost:3000/api"
 
 const user = getUser()
+const token = getToken()
 
 export async function request(endpoint, options = {}) {
     
     const headers = {
         "content-type": "application/json",
-        "x-auth": user? JSON.stringify(user): "",
         ...options.headers
     }
+
+    if (token) {
+        headers["authorization"] = `Bearer ${token}`
+    }
+    
     const response = await fetch(API_URL + endpoint, {
         headers,
         ...options

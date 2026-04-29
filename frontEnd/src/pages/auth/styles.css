@@ -185,6 +185,7 @@ body {
     border-left: 4px solid #cc3333;
     font-size: 13px;
     text-align: center;
+    display: none;
 }
 
 /* Footer académico */

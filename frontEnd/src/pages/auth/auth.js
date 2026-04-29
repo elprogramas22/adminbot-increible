@@ -8,6 +8,26 @@ const password = document.getElementById("password")
 const error = document.getElementById("errorMessage")
 const boton = document.getElementById("button-primary")
 
+// Validación en tiempo real para email
+email.addEventListener("input", function() {
+    const emailValue = email.value.trim()
+    if (emailValue && !validMail(emailValue)) {
+        showError(error, "Correo electrónico inválido")
+    } else {
+        cleanError(error)
+    }
+})
+
+// Validación en tiempo real para contraseña
+password.addEventListener("input", function() {
+    const passwordValue = password.value.trim()
+    if (passwordValue && passwordValue.length < 6) {
+        showError(error, "La contraseña debe tener al menos 6 caracteres")
+    } else {
+        cleanError(error)
+    }
+})
+
 form.addEventListener("submit", async function (e) {
     e.preventDefault()
     cleanError()
