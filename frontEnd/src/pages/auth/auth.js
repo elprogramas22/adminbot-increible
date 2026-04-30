@@ -30,7 +30,7 @@ password.addEventListener("input", function() {
 
 form.addEventListener("submit", async function (e) {
     e.preventDefault()
-    cleanError()
+    cleanError(error)
 
     const emailValue = email.value.trim()
     const passwordValue = password.value.trim()
@@ -60,7 +60,9 @@ form.addEventListener("submit", async function (e) {
         if (response.ok) {
             saveUser(response.user, response.token)
             window.location.href = "/dashboard"
+            return
         }
+
     } catch (err) {
         showError(error, err.message || "Error al iniciar sesión")
     } finally {

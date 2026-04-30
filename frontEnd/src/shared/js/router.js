@@ -41,6 +41,9 @@ export function loadPage(pagePath) {
             const scripts = document.querySelectorAll('#app script')
             scripts.forEach(script => {
                 const newScript = document.createElement('script')
+                if (script.type) {
+                    newScript.type = script.type
+                }
                 if (script.src) {
                     newScript.src = script.src
                 } else {

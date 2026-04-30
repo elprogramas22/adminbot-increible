@@ -18,12 +18,21 @@ app.use(cors())
 app.use(express.json())
 const PORT = 3000
 
+app.use("/api/auth", authRoutes)
+
+app.use("/api/students", authenticateToken)
+app.use("/api/guardians", authenticateToken)
+app.use("/api/payments", authenticateToken)
+app.use("/api/users", authenticateToken)
+app.use("/api/whatsapp", authenticateToken)
+app.use("/api/dashboard", authenticateToken)
+app.use("/api/attendance", authenticateToken)
+
 app.use("/api", studentRoutes)
 app.use("/api", guardianRoutes)
 app.use("/api", paymentRoutes)
 app.use("/api", userRoutes)
 app.use("/api", whatsappNotificationsRoutes)
-app.use("/api", authRoutes)
 app.use("/api", dashboardRoute)
 app.use("/api", attendanceRoutes)
 
@@ -41,15 +50,6 @@ app.use((req, res, next) => {
     }
     next()
 })
-
-// Middleware para rutas privadas (debe ir después de las rutas)
-app.use("/api/students", authenticateToken)
-app.use("/api/guardians", authenticateToken)
-app.use("/api/payments", authenticateToken)
-app.use("/api/users", authenticateToken)
-app.use("/api/whatsapp", authenticateToken)
-app.use("/api/dashboard", authenticateToken)
-app.use("/api/attendance", authenticateToken)
 /*
 const passwordList = [
     "andres123",

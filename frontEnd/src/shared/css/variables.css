@@ -1,6 +1,18 @@
-:root{
-    --background: black ;
-    --text: white ;
-    --primary:  ;
-    
+
+:root {
+    --background: #f4f7fb;
+    --surface: #ffffff;
+    --card-bg: #ffffff;
+    --panel-bg: #f9fbff;
+    --text: #102a43;
+    --text-secondary: #64748b;
+    --border-color: rgba(15, 23, 42, 0.08);
+    --primary-color: #2563eb;
+    --accent-color: #2563eb;
+    --accent-hover: #1d4ed8;
+    --success-color: #16a34a;
+    --warning-color: #f59e0b;
+    --danger-color: #dc2626;
+    --shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+    --radius: 18px;
 }

@@ -1,0 +1,7 @@
+
+.alert-card { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-bottom: 15px; padding: 20px; border-radius: 18px; border: 1px solid var(--border-color); background: var(--panel-bg); }
+.alert-icon { font-size: 1.6rem; width: 52px; height: 52px; display: inline-flex; align-items: center; justify-content: center; background: rgba(37, 99, 235, 0.12); border-radius: 16px; }
+.alert-info { flex: 1; min-width: 220px; }
+.alert-info strong { display: block; margin-bottom: 6px; color: var(--text); }
+.alert-info p { margin: 0; color: var(--text-secondary); }
+.alert-time { white-space: nowrap; color: var(--text-secondary); font-size: 0.92rem; }

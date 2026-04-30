@@ -8,6 +8,7 @@ export function showError(element, message) {
 }
 
 export function cleanError(element) {
+  if (!element) return
   element.textContent = '';
   element.style.display = 'none';
 }

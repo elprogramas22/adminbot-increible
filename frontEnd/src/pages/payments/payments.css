@@ -1,0 +1,11 @@
+
+.payment-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 30px; }
+.payment-summary .card { padding: 24px; }
+.payment-summary h3 { margin: 0 0 10px; color: var(--text-secondary); font-size: 0.95rem; }
+.stat-value { margin: 0; font-size: 2rem; font-weight: 700; color: var(--text); }
+.payment-list { margin-top: 20px; }
+.payment-item { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--border-color); }
+.payment-item:last-child { border-bottom: none; }
+.payment-item strong { display: block; color: var(--text); }
+.payment-item small { color: var(--text-secondary); }
+.amount { font-weight: 700; color: var(--accent-color); }
