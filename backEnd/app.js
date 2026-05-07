@@ -11,6 +11,7 @@ import authRoutes from "./routes/auth.route.js"
 import dashboardRoute from "./routes/dashboard.route.js"
 import attendanceRoutes from "./routes/attendance.route.js"
 import { authenticateToken } from "./config/auth.middleware.js"
+import whatsappRoutes from "./modules/whastapp/whatsapp.routes.js"
 
 
 const app = express()
@@ -35,6 +36,7 @@ app.use("/api", userRoutes)
 app.use("/api", whatsappNotificationsRoutes)
 app.use("/api", dashboardRoute)
 app.use("/api", attendanceRoutes)
+app.use("/api", whatsappRoutes)
 
 app.get("/", (req, res)=>{
     res.send("api en funcionamiento")
@@ -50,7 +52,7 @@ app.use((req, res, next) => {
     }
     next()
 })
-/*
+
 const passwordList = [
     "andres123",
     "juan123",
@@ -62,7 +64,7 @@ for(let i=0; i < passwordList.length; i++){
     const hash = await bcrypt.hash(passwordList[i], 10)
     console.log(`contrasenia : ${passwordList[i]}, hash : ${hash}`)
 }
-*/
+
 app.listen(PORT, ()=>{
     console.log("servidor corriendo en el puerto 3000")
 })

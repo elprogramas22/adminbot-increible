@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('logout-btn').addEventListener('click', logout);
 
     try {
-        const response = await request('dashboard');
+        const response = await request('/dashboard');
         if (response.ok) {
             const data = response.dashboard;
 

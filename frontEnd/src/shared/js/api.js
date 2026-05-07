@@ -5,7 +5,10 @@ const user = getUser()
 const token = getToken()
 
 export async function request(endpoint, options = {}) {
-    
+    if (!endpoint.startsWith('/')) {
+        endpoint = `/${endpoint}`
+    }
+
     const headers = {
         "content-type": "application/json",
         ...options.headers

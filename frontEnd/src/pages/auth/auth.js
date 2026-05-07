@@ -59,7 +59,7 @@ form.addEventListener("submit", async function (e) {
 
         if (response.ok) {
             saveUser(response.user, response.token)
-            window.location.href = "/dashboard"
+            window.location.href = "../dashboard/index.html"
             return
         }
 
