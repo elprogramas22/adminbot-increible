@@ -53,7 +53,7 @@ app.use((req, res, next) => {
     next()
 })
 
-const passwordList = [
+/*const passwordList = [
     "andres123",
     "juan123",
     "esteban123",
@@ -67,4 +67,4 @@ for(let i=0; i < passwordList.length; i++){
 
 app.listen(PORT, ()=>{
     console.log("servidor corriendo en el puerto 3000")
-})
+})*/

@@ -7,7 +7,8 @@ export const sendMessage = async (req, res)=>{
 
         res.status(200).json({
             ok:true,
-            data
+            message: "mensaje enviado con exito",
+            data: data
         })
     }catch(error){
         return res.status(500).json({
