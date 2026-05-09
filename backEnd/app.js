@@ -1,6 +1,8 @@
 import express from "express"
 import bcrypt from "bcrypt"
 import cors from "cors"
+import dotenv from "dotenv";
+dotenv.config();
 
 import studentRoutes from "./routes/students.route.js" 
 import guardianRoutes from "./routes/guardians.route.js"
@@ -63,8 +65,8 @@ app.use((req, res, next) => {
 for(let i=0; i < passwordList.length; i++){
     const hash = await bcrypt.hash(passwordList[i], 10)
     console.log(`contrasenia : ${passwordList[i]}, hash : ${hash}`)
-}
+}*/
 
 app.listen(PORT, ()=>{
     console.log("servidor corriendo en el puerto 3000")
-})*/
+})
